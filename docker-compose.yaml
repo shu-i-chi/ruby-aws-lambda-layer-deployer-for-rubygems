@@ -1,0 +1,16 @@
+services:
+  rubygems_builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /home/rubygems-builder/lambda-layer
+    working_dir: /home/rubygems-builder/lambda-layer
+
+    # Accepts tty For convenience
+    #   sudo docker compose up -d && sudo docker compose exec --user root rubygems_builder /bin/bash
+    #   # Do something...
+    #   sudo docker compose down
+    tty: true

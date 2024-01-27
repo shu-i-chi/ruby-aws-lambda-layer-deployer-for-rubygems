@@ -1,0 +1,8 @@
+# Ignore zip files
+*.zip
+
+# Ignore files/directories created for docker container
+Gemfile.lock
+.bundle/
+tmp/
+built_rubygems/ # Set the same directory as ${rubygems_build_dirname} defined in config.sh.
